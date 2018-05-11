@@ -1,0 +1,53 @@
+#
+# Common configuration for each firstwiki repo
+#
+
+permalink:        pretty
+
+exclude: [vendor, script]
+
+gems:
+  - jekyll-gist
+  - jekyll-paginate
+  - jekyll-github-metadata
+  
+author:
+  name:           FIRSTWiki Contributors
+  url:            https://firstwiki.github.io
+  email:
+
+# Setup
+title:            FIRSTwiki
+tagline:          The FIRST Robotics encyclopedia
+paginate:         5
+safe:             false
+excerpt_separator: ""
+strict_front_matter: true
+
+data_dir:         _common/_data
+includes_dir:     _common/_includes
+layouts_dir:      _common/_layouts
+
+#
+# Begin specific configuration for this repo
+#
+
+url:              https://firstwiki.github.io
+baseurl:          /frc7000
+
+collections:
+  frc:
+    output: true
+    permalink: /:slug
+  src:
+    output: true
+    permalink: /:slug
+
+    
+defaults:
+  -
+    scope:
+      path: ""
+      type: "frc"
+    values:
+      layout: team
